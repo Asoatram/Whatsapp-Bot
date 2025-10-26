@@ -1,0 +1,29 @@
+{
+  "name": "finance-bot",
+  "version": "1.0.0",
+  "description": "AI-powered WhatsApp financial tracker using whatsapp-web.js and LangChain",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --detectOpenHandles --runInBand"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "dotenv": "^17.2.3",
+    "langchain": "^1.0.1",
+    "openai": "^6.7.0",
+    "prisma": "^6.18.0",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.34.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.10"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "private": true
+}
