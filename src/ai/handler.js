@@ -2,6 +2,7 @@ import { model } from "./llm.js";
 import { parser } from "./parser.js";
 import { getUserMemory, saveUserMemory, trimContext } from "./memory.js";
 import {addTransaction, getDetailedSummary, getTotalSpending} from "../services/transactionService.js";
+import {generateTransactionExport} from "../services/exportService.js";
 
 export async function handleFinancialMessage(message, phoneNumber) {
     const history = await getUserMemory(phoneNumber);
@@ -42,6 +43,14 @@ ${parser.getFormatInstructions()}
                 await addTransaction(phoneNumber, amount, parsed.category, parsed.description);
                 reply = `✅ Added ${amount.toLocaleString()} for ${parsed.category || parsed.description}.`;
                 break;
+            }
+            case "export_csv": {
+                try {
+                    const filePath = await generateTransactionExport(phoneNumber);
+                    return { filePath, message: "📤 Export complete! Sending your CSV file..." };
+                } catch (err) {
+                    return "⚠️ No transactions found to export.";
+                }
             }
 
             case "get_summary": {

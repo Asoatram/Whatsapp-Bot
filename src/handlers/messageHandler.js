@@ -1,5 +1,6 @@
 import { handleFinancialMessage } from "../ai/handler.js";
-
+import pkg from 'whatsapp-web.js';
+const {MessageMedia} = pkg;
 // Pure, testable
 export async function computeReplyForMessageBody(text, from) {
 
@@ -18,8 +19,13 @@ export default async function handleIncomingMessage(message) {
         const text = message.body?.trim?.() ?? "";
         const reply = await computeReplyForMessageBody(text, message.from);
 
-        if (reply) await message.reply(reply);
-    } catch (error) {
+        if (typeof reply === "string") {
+            await message.reply(reply);
+        } else if (reply.filePath) {
+            const media = MessageMedia.fromFilePath(reply.filePath);
+            await message.reply(reply.message);
+            await message.reply(media);
+        }    } catch (error) {
         console.error("❌ Error handling message:", error);
         try {
             await message.reply("Something went wrong while processing your request.");

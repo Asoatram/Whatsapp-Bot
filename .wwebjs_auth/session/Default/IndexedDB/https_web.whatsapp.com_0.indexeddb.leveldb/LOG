@@ -1,13 +1,13 @@
-2025/10/27-13:23:54.897 13c99d Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/10/27-13:23:54.897 13c99d Recovering log #69
-2025/10/27-13:23:54.918 13c99d Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000069.log 
-2025/10/27-13:23:54.918 13c99d Delete type=2 #70
-2025/10/27-13:23:54.918 13c99d Delete type=2 #67
-2025/10/27-13:23:56.522 13c998 Level-0 table #74: started
-2025/10/27-13:23:56.530 13c998 Level-0 table #74: 381682 bytes OK
-2025/10/27-13:23:56.535 13c998 Delete type=0 #69
-2025/10/27-13:23:56.535 13c998 Manual compaction at level-0 from '\x00!\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00"\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/10/27-13:23:57.929 13c9ec Compacting 1@1 + 1@2 files
-2025/10/27-13:23:57.961 13c9ec Generated table #75@1: 39557 keys, 1592943 bytes
-2025/10/27-13:23:57.961 13c9ec Compacted 1@1 + 1@2 files => 1592943 bytes
-2025/10/27-13:23:57.967 13c9ec compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/10/27-21:20:18.915 14b08f Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/10/27-21:20:18.915 14b08f Recovering log #85
+2025/10/27-21:20:18.927 14b08f Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000085.log 
+2025/10/27-21:20:20.529 14b0e1 Level-0 table #90: started
+2025/10/27-21:20:20.540 14b0e1 Level-0 table #90: 351371 bytes OK
+2025/10/27-21:20:20.546 14b0e1 Delete type=0 #85
+2025/10/27-21:20:20.547 14b0e1 Manual compaction at level-0 from '\x00%\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00&\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/10/27-21:20:21.942 14b08a Compacting 1@1 + 1@2 files
+2025/10/27-21:20:21.978 14b08a Generated table #91@1: 46857 keys, 1833102 bytes
+2025/10/27-21:20:21.978 14b08a Compacted 1@1 + 1@2 files => 1833102 bytes
+2025/10/27-21:20:21.984 14b08a compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/10/27-21:20:21.985 14b08a Delete type=2 #90
+2025/10/27-21:20:21.985 14b08a Delete type=2 #87
