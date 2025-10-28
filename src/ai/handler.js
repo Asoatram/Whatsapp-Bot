@@ -5,6 +5,7 @@ import {addTransaction, getDetailedSummary} from "../services/transactionService
 import {generateTransactionExport} from "../services/exportService.js";
 import {getBalance, setBalance} from "../services/balanceService.js";
 import {getAIPersonalizedAdvice} from "../services/adviceService.js";
+import logger from "../config/logger.js";
 
 export async function handleFinancialMessage(message, phoneNumber) {
     const history = await getUserMemory(phoneNumber);
@@ -113,7 +114,7 @@ ${summaryLines}
 
         return reply;
     } catch (err) {
-        console.error("❌ AI error:", err);
+        logger.error("❌ AI error:", err);
         return "There was a problem understanding your message.";
     }
 }

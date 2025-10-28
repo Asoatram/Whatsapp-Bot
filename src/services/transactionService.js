@@ -1,5 +1,6 @@
 import prisma from "../config/db.js";
 import {deductBalance} from "./balanceService.js";
+import logger from "../config/logger.js";
 
 export async function getOrCreateUser(phoneNumber, name = null) {
     try {
@@ -10,7 +11,7 @@ export async function getOrCreateUser(phoneNumber, name = null) {
         });
         return user;
     } catch (error) {
-        console.error("❌ Error in getOrCreateUser:", error);
+        logger.error("❌ Error in getOrCreateUser:", error);
         throw error;
     }
 }
@@ -35,10 +36,10 @@ export async function addTransaction(phoneNumber, amount, category, description)
         const newBalance = await deductBalance(phoneNumber, amount);
 
 
-        console.log(`[TX] ${amount} deducted — new balance: ${newBalance}`);
+        logger.info(`[TX] ${amount} deducted — new balance: ${newBalance}`);
         return { ...transaction, newBalance };
     } catch (error) {
-        console.error("❌ Error in addTransaction:", error);
+        logger.error("❌ Error in addTransaction:", error);
         throw error;
     }
 }
@@ -52,7 +53,7 @@ export async function getTransactions(phoneNumber) {
         });
         return user ? user.transactions : [];
     } catch (error) {
-        console.error("❌ Error in getTransactions:", error);
+        logger.error("❌ Error in getTransactions:", error);
         throw error;
     }
 }
@@ -96,7 +97,7 @@ export async function getTotalSpending(phoneNumber, period = null) {
 
         return transactions.reduce((sum, t) => sum + t.amount, 0);
     } catch (error) {
-        console.error("❌ Error in getTotalSpending:", error);
+        logger.error("❌ Error in getTotalSpending:", error);
         throw error;
     }
 }

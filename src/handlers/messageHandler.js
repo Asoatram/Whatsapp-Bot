@@ -1,6 +1,7 @@
 import { handleFinancialMessage } from "../ai/handler.js";
 import pkg from 'whatsapp-web.js';
 import {handleMediaMessage, isOcrRequest} from "./mediaHandler.js";
+import logger from "../config/logger.js";
 const {MessageMedia} = pkg;
 // Pure, testable
 export async function computeReplyForMessageBody(text, from) {
@@ -35,7 +36,7 @@ export default async function handleIncomingMessage(message) {
             await message.reply(reply.message);
             await message.reply(media);
         }    } catch (error) {
-        console.error("❌ Error handling message:", error);
+        logger.error("❌ Error handling message:", error);
         try {
             await message.reply("Something went wrong while processing your request.");
         } catch {}

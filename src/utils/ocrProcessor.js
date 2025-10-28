@@ -2,10 +2,11 @@ import Tesseract from "tesseract.js";
 import { model } from "../ai/llm.js";
 import { z } from "zod";
 import { StructuredOutputParser } from "@langchain/core/output_parsers";
+import logger from "../config/logger.js";
 
 export async function extractTextFromImage(imagePath) {
     try {
-        console.log("🔍 Starting OCR on:", imagePath);
+        logger.info("🔍 Starting OCR on:", imagePath);
 
         const result = await Tesseract.recognize(imagePath, "eng+ind", {
             logger: (m) => {
@@ -16,11 +17,11 @@ export async function extractTextFromImage(imagePath) {
         });
 
         const text = result.data.text.trim();
-        console.log("✅ OCR completed. Extracted text length:", text.length);
+        logger.info("✅ OCR completed. Extracted text length:", text.length);
 
         return text;
     } catch (error) {
-        console.error("❌ OCR extraction error:", error);
+        logger.error("❌ OCR extraction error:", error);
         throw new Error("Failed to extract text from image");
     }
 }
@@ -70,11 +71,11 @@ ${parser.getFormatInstructions()}
         const response = await model.invoke(prompt);
         const parsed = await parser.parse(response.content);
 
-        console.log("🤖 LLM parsed receipt:", JSON.stringify(parsed, null, 2));
+        logger.error("🤖 LLM parsed receipt:", JSON.stringify(parsed, null, 2));
 
         return parsed;
     } catch (error) {
-        console.error("❌ LLM parsing error:", error);
+        logger.error("❌ LLM parsing error:", error);
         throw new Error("Failed to parse receipt with LLM");
     }
 }
@@ -95,7 +96,7 @@ export async function processReceiptOCR(imagePath) {
             status: "success",
         };
     } catch (error) {
-        console.error("❌ OCR processing error:", error);
+        logger.error("❌ OCR processing error:", error);
         return {
             extractedText: null,
             parsedData: null,

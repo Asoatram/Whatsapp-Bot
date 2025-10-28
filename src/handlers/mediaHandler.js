@@ -7,6 +7,7 @@ import {
     createOcrLog,
     processOcrAndCreateTransactions,
 } from "../services/ocrService.js";
+import logger from "../config/logger.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,7 +18,7 @@ function ensureMediaDirectory() {
     const fullPath = path.resolve(OCR_MEDIA_PATH);
     if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: true });
-        console.log("✅ Created OCR media directory:", fullPath);
+        logger.info("✅ Created OCR media directory:", fullPath);
     }
 }
 
@@ -33,7 +34,7 @@ async function saveMedia(media, phoneNumber) {
     const buffer = Buffer.from(media.data, "base64");
     fs.writeFileSync(filepath, buffer);
 
-    console.log("💾 Media saved:", filepath);
+    logger.info("💾 Media saved:", filepath);
     return filepath;
 }
 
@@ -84,7 +85,7 @@ Type "summary" to see your spending breakdown.
 
         return result;
     } catch (error) {
-        console.error("❌ Error handling media:", error);
+        logger.error("❌ Error handling media:", error);
         await message.reply(
             "❌ An error occurred while processing your receipt. Please try again or enter the expense manually."
         );

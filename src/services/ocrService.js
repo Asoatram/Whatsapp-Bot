@@ -1,6 +1,7 @@
 import prisma from "../config/db.js";
 import {addTransaction, getOrCreateUser} from "./transactionService.js";
 import {processReceiptOCR} from "../utils/ocrProcessor.js";
+import logger from "../config/logger.js";
 
 export async function createOcrLog(phoneNumber, imagePath) {
     try {
@@ -14,7 +15,7 @@ export async function createOcrLog(phoneNumber, imagePath) {
             },
         });
     } catch (error) {
-        console.error("❌ Error creating OCR log:", error);
+        logger.error("❌ Error creating OCR log:", error);
         throw error;
     }
 }
@@ -104,7 +105,7 @@ export async function processOcrAndCreateTransactions(ocrLogId) {
             ocrLog,
         };
     } catch (error) {
-        console.error("❌ Error processing OCR:", error);
+        logger.error("❌ Error processing OCR:", error);
         throw error;
     }
 }
