@@ -2,16 +2,18 @@ import qrcode from "qrcode-terminal";
 import pkg from "whatsapp-web.js";
 const { Client, LocalAuth } = pkg;
 import * as dotenv from "dotenv";
-import {handleFinancialMessage} from "./src/ai/handler.js";
-import {handleNaturalMessage} from "./src/ai/langchain.js";
 import handleIncomingMessage from "./src/handlers/messageHandler.js";
 
 dotenv.config();
 
-// Initialize WhatsApp client
+console.log("🚀 Initializing WhatsApp bot...");
+
 const client = new Client({
-    authStrategy: new LocalAuth(), // saves your session so you don’t scan QR every time
-    puppeteer: { headless: true },
+    authStrategy: new LocalAuth(),
+    puppeteer: { 
+        headless: true,
+        args: ['--no-sandbox']
+    }
 });
 
 client.on("qr", qr => {
@@ -19,7 +21,6 @@ client.on("qr", qr => {
     qrcode.generate(qr, { small: true });
 });
 
-// Once ready
 client.on("ready", () => {
     console.log("✅ WhatsApp bot connected and ready!");
 });
@@ -28,6 +29,5 @@ client.on("message", async message => {
     console.log("💬 Received:", message.body);
     await handleIncomingMessage(message);
 });
-
 
 await client.initialize();

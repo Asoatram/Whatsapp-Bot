@@ -1,13 +1,11 @@
-2025/10/27-21:20:18.915 14b08f Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/10/27-21:20:18.915 14b08f Recovering log #85
-2025/10/27-21:20:18.927 14b08f Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000085.log 
-2025/10/27-21:20:20.529 14b0e1 Level-0 table #90: started
-2025/10/27-21:20:20.540 14b0e1 Level-0 table #90: 351371 bytes OK
-2025/10/27-21:20:20.546 14b0e1 Delete type=0 #85
-2025/10/27-21:20:20.547 14b0e1 Manual compaction at level-0 from '\x00%\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00&\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/10/27-21:20:21.942 14b08a Compacting 1@1 + 1@2 files
-2025/10/27-21:20:21.978 14b08a Generated table #91@1: 46857 keys, 1833102 bytes
-2025/10/27-21:20:21.978 14b08a Compacted 1@1 + 1@2 files => 1833102 bytes
-2025/10/27-21:20:21.984 14b08a compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/10/27-21:20:21.985 14b08a Delete type=2 #90
-2025/10/27-21:20:21.985 14b08a Delete type=2 #87
+2025/10/28-16:52:54.434 49b0 Reusing MANIFEST C:\Users\HP VICTUS\Documents\GitHub\Whatsapp-Bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/10/28-16:52:54.434 49b0 Recovering log #114
+2025/10/28-16:52:54.515 49b0 Reusing old log C:\Users\HP VICTUS\Documents\GitHub\Whatsapp-Bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000114.log 
+2025/10/28-16:52:56.741 9d30 Level-0 table #119: started
+2025/10/28-16:52:56.761 9d30 Level-0 table #119: 917888 bytes OK
+2025/10/28-16:52:56.765 9d30 Delete type=0 #114
+2025/10/28-16:52:56.766 9d30 Manual compaction at level-0 from '\x00/\x00\x00\x00' @ 72057594037927935 : 1 .. '\x000\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/10/28-16:52:58.431 cc4 Compacting 1@1 + 1@2 files
+2025/10/28-16:52:58.494 cc4 Generated table #120@1: 42431 keys, 1819187 bytes
+2025/10/28-16:52:58.494 cc4 Compacted 1@1 + 1@2 files => 1819187 bytes
+2025/10/28-16:52:58.497 cc4 compacted to: files[ 0 0 1 0 0 0 0 ]

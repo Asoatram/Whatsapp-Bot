@@ -4,10 +4,9 @@ import { z } from "zod";
 export const schema = z.object({
     intent: z.enum(["add_expense", "get_summary", "export_csv", "unknown"]),
     amount: z.number().optional(),
-    category: z.string().optional(),
+    category: z.enum(["food", "transport", "shopping", "bills", "health", "housing", "misc", "other"]).optional(),
     description: z.string().optional(),
     period: z.string().optional(),
-
 });
 
 export const parser = StructuredOutputParser.fromZodSchema(schema);

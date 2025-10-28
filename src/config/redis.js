@@ -1,10 +1,17 @@
-import Redis from "ioredis";
-import * as dotenv from "dotenv";
-dotenv.config();
+// Temporary in-memory storage (skip Redis)
+const memoryStore = new Map();
 
-const redis = new Redis(process.env.REDIS_URL);
+export default {
+  get: async (key) => {
+    return memoryStore.get(key) || null;
+  },
+  setex: async (key, expiry, value) => {
+    memoryStore.set(key, value);
+  },
+  del: async (key) => {
+    memoryStore.delete(key);
+  },
+  on: () => {}, // Mock event handlers
+};
 
-redis.on("connect", () => console.log("✅ Connected to Redis"));
-redis.on("error", (err) => console.error("❌ Redis connection error:", err));
-
-export default redis;
+console.log("⚠️ Using in-memory storage (Redis skipped)");

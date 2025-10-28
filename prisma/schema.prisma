@@ -1,33 +1,46 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  output = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
 model User {
-  id            String         @id @default(uuid())
-  phoneNumber   String         @unique
-  name          String?
-  createdAt     DateTime       @default(now())
-  transactions  Transaction[]  // 1-to-many relation
+  id String @id @default(uuid())
+  phoneNumber String @unique
+  name String?
+  createdAt DateTime @default(now())
+  transactions Transaction[] // 1-to-many relation
+  ocrLogs OcrLog[] // 1-to-many relation
 }
 
 model Transaction {
-  id          Int      @id @default(autoincrement())
-  user        User     @relation(fields: [userId], references: [id])
-  userId      String
-  amount      Float
-  category    String?
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id])
+  userId String
+  amount Float
+  category String?
   description String?
-  createdAt   DateTime @default(now())
+  createdAt DateTime @default(now())
+  ocrLogId Int? // Optional reference to OCR log
+  ocrLog OcrLog? @relation(fields: [ocrLogId], references: [id])
+}
+
+model OcrLog {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id])
+  userId String
+  imagePath String
+  extractedText String?
+  parsedData Json? // Store parsed JSON (amount, items, etc)
+  status String @default("pending") // pending, success, failed
+  errorMessage String?
+  createdAt DateTime @default(now())
+  transactions Transaction[] // OCR can create multiple transactions
 }

@@ -11,8 +11,10 @@ export async function handleFinancialMessage(message, phoneNumber) {
         .map(h => `User: ${h.user}\nBot: ${h.bot}`)
         .join("\n");
 
-    const prompt = `
+const prompt = `
 You are a helpful financial assistant. Use the past messages to understand context.
+
+Available categories: food, transport, shopping, bills, health, housing, misc, other
 
 Past conversation:
 ${contextText || "None"}

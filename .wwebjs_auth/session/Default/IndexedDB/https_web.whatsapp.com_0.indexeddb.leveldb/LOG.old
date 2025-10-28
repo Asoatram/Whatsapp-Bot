@@ -1,13 +1,15 @@
-2025/10/27-21:19:18.279 14ad56 Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/10/27-21:19:18.279 14ad56 Recovering log #81
-2025/10/27-21:19:18.290 14ad56 Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000081.log 
-2025/10/27-21:19:19.751 14ad91 Level-0 table #86: started
-2025/10/27-21:19:19.761 14ad91 Level-0 table #86: 266165 bytes OK
-2025/10/27-21:19:19.767 14ad91 Delete type=0 #81
-2025/10/27-21:19:19.767 14ad91 Manual compaction at level-0 from '\x00$\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00%\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/10/27-21:19:21.337 14ada7 Compacting 1@1 + 1@2 files
-2025/10/27-21:19:21.369 14ada7 Generated table #87@1: 45639 keys, 1792531 bytes
-2025/10/27-21:19:21.369 14ada7 Compacted 1@1 + 1@2 files => 1792531 bytes
-2025/10/27-21:19:21.375 14ada7 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/10/27-21:19:21.375 14ada7 Delete type=2 #86
-2025/10/27-21:19:21.375 14ada7 Delete type=2 #83
+2025/10/28-16:17:27.021 4058 Reusing MANIFEST C:\Users\HP VICTUS\Documents\GitHub\Whatsapp-Bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/10/28-16:17:27.021 4058 Recovering log #110
+2025/10/28-16:17:27.022 4058 Reusing old log C:\Users\HP VICTUS\Documents\GitHub\Whatsapp-Bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000110.log 
+2025/10/28-16:17:27.022 4058 Delete type=2 #109
+2025/10/28-16:17:27.022 4058 Delete type=2 #111
+2025/10/28-16:17:29.574 92c8 Level-0 table #115: started
+2025/10/28-16:17:29.584 92c8 Level-0 table #115: 47760 bytes OK
+2025/10/28-16:17:29.588 92c8 Delete type=0 #110
+2025/10/28-16:17:29.588 92c8 Manual compaction at level-0 from '\x00.\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00/\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/10/28-16:17:31.288 4058 Compacting 1@1 + 1@2 files
+2025/10/28-16:17:31.339 4058 Generated table #116@1: 38683 keys, 1659811 bytes
+2025/10/28-16:17:31.339 4058 Compacted 1@1 + 1@2 files => 1659811 bytes
+2025/10/28-16:17:31.342 4058 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/10/28-16:17:31.342 4058 Delete type=2 #112
+2025/10/28-16:17:31.343 4058 Delete type=2 #115
