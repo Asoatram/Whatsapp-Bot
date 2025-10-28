@@ -2,9 +2,10 @@ import { StructuredOutputParser } from "@langchain/core/output_parsers";
 import { z } from "zod";
 
 export const schema = z.object({
-    intent: z.enum(["add_expense", "get_summary", "export_csv", "unknown"]),
+    intent: z.enum(["add_expense", "get_summary", "export_csv",   "get_balance",
+        "set_balance" ,"unknown", "get_budget_advice"]),
     amount: z.number().optional(),
-    category: z.string().optional(),
+    category: z.enum(["food", "transport", "shopping", "bills", "health", "housing", "misc", "other"]).optional(),
     description: z.string().optional(),
     period: z.string().optional(),
 

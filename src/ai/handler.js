@@ -1,8 +1,10 @@
-import { model } from "./llm.js";
-import { parser } from "./parser.js";
-import { getUserMemory, saveUserMemory, trimContext } from "./memory.js";
-import {addTransaction, getDetailedSummary, getTotalSpending} from "../services/transactionService.js";
+import {model} from "./llm.js";
+import {parser} from "./parser.js";
+import {getUserMemory, saveUserMemory, trimContext} from "./memory.js";
+import {addTransaction, getDetailedSummary} from "../services/transactionService.js";
 import {generateTransactionExport} from "../services/exportService.js";
+import {getBalance, setBalance} from "../services/balanceService.js";
+import {getAIPersonalizedAdvice} from "../services/adviceService.js";
 
 export async function handleFinancialMessage(message, phoneNumber) {
     const history = await getUserMemory(phoneNumber);
@@ -51,6 +53,21 @@ ${parser.getFormatInstructions()}
                 } catch (err) {
                     return "⚠️ No transactions found to export.";
                 }
+            }
+
+            case "set_balance": {
+                if (!parsed.amount) return "Please specify how much to set your balance to.";
+                const newBalance = await setBalance(phoneNumber, parsed.amount);
+                return `💵 Balance set to ${newBalance.toLocaleString()}.`;
+            }
+
+            case "get_balance": {
+                const balance = await getBalance(phoneNumber);
+                return `💰 Your current balance is ${balance.toLocaleString()}.`;
+            }
+
+            case "get_budget_advice": {
+                return await getAIPersonalizedAdvice(phoneNumber);
             }
 
             case "get_summary": {

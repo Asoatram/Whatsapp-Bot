@@ -1,5 +1,6 @@
 import { handleFinancialMessage } from "../ai/handler.js";
 import pkg from 'whatsapp-web.js';
+import {handleMediaMessage, isOcrRequest} from "./mediaHandler.js";
 const {MessageMedia} = pkg;
 // Pure, testable
 export async function computeReplyForMessageBody(text, from) {
@@ -15,7 +16,15 @@ export async function computeReplyForMessageBody(text, from) {
 // WhatsApp wiring
 export default async function handleIncomingMessage(message) {
     try {
-        // ignore non-text here (media handled elsewhere if you like)
+
+        // PRIORITY 1: Handle media messages (images for OCR)
+        if (message.hasMedia || isOcrRequest(message)) {
+            const ocrResult = await handleMediaMessage(message);
+            if (ocrResult !== null) {
+                return; // OCR handler already sent reply
+            }
+        }
+
         const text = message.body?.trim?.() ?? "";
         const reply = await computeReplyForMessageBody(text, message.from);
 

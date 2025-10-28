@@ -1,13 +1,15 @@
-2025/10/27-21:20:18.915 14b08f Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/10/27-21:20:18.915 14b08f Recovering log #85
-2025/10/27-21:20:18.927 14b08f Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000085.log 
-2025/10/27-21:20:20.529 14b0e1 Level-0 table #90: started
-2025/10/27-21:20:20.540 14b0e1 Level-0 table #90: 351371 bytes OK
-2025/10/27-21:20:20.546 14b0e1 Delete type=0 #85
-2025/10/27-21:20:20.547 14b0e1 Manual compaction at level-0 from '\x00%\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00&\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/10/27-21:20:21.942 14b08a Compacting 1@1 + 1@2 files
-2025/10/27-21:20:21.978 14b08a Generated table #91@1: 46857 keys, 1833102 bytes
-2025/10/27-21:20:21.978 14b08a Compacted 1@1 + 1@2 files => 1833102 bytes
-2025/10/27-21:20:21.984 14b08a compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/10/27-21:20:21.985 14b08a Delete type=2 #90
-2025/10/27-21:20:21.985 14b08a Delete type=2 #87
+2025/10/28-19:11:07.474 17de20 Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/10/28-19:11:07.474 17de20 Recovering log #125
+2025/10/28-19:11:07.508 17de20 Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000125.log 
+2025/10/28-19:11:09.380 17de20 Level-0 table #131: started
+2025/10/28-19:11:09.396 17de20 Level-0 table #131: 657418 bytes OK
+2025/10/28-19:11:09.401 17de20 Delete type=0 #125
+2025/10/28-19:11:09.402 17de20 Manual compaction at level-0 from '\x00/\x00\x00\x00' @ 72057594037927935 : 1 .. '\x000\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/10/28-19:11:10.744 17de6d Compacting 1@1 + 2@2 files
+2025/10/28-19:11:10.786 17de6d Generated table #132@1: 51941 keys, 2207057 bytes
+2025/10/28-19:11:10.796 17de6d Generated table #133@1: 9752 keys, 188114 bytes
+2025/10/28-19:11:10.796 17de6d Compacted 1@1 + 2@2 files => 2395171 bytes
+2025/10/28-19:11:10.802 17de6d compacted to: files[ 0 0 2 0 0 0 0 ]
+2025/10/28-19:11:10.802 17de6d Delete type=2 #131
+2025/10/28-19:11:10.802 17de6d Delete type=2 #127
+2025/10/28-19:11:10.802 17de6d Delete type=2 #128

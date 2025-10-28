@@ -1,3 +1,5 @@
-2025/10/27-21:20:18.507 14b089 Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/Local Storage/leveldb/MANIFEST-000001
-2025/10/27-21:20:18.508 14b089 Recovering log #7
-2025/10/27-21:20:18.508 14b089 Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/Local Storage/leveldb/000007.log 
+2025/10/28-19:11:07.064 17de1a Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/Local Storage/leveldb/MANIFEST-000001
+2025/10/28-19:11:07.065 17de1a Recovering log #10
+2025/10/28-19:11:07.065 17de1a Level-0 table #13: started
+2025/10/28-19:11:07.072 17de1a Level-0 table #13: 12454 bytes OK
+2025/10/28-19:11:07.078 17de1a Delete type=0 #10

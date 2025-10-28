@@ -1,4 +1,5 @@
 import prisma from "../config/db.js";
+import {deductBalance} from "./balanceService.js";
 
 export async function getOrCreateUser(phoneNumber, name = null) {
     try {
@@ -31,7 +32,11 @@ export async function addTransaction(phoneNumber, amount, category, description)
             },
         });
 
-        return transaction;
+        const newBalance = await deductBalance(phoneNumber, amount);
+
+
+        console.log(`[TX] ${amount} deducted — new balance: ${newBalance}`);
+        return { ...transaction, newBalance };
     } catch (error) {
         console.error("❌ Error in addTransaction:", error);
         throw error;

@@ -19,7 +19,10 @@ model User {
   phoneNumber   String         @unique
   name          String?
   createdAt     DateTime       @default(now())
+  balance       Float?         @default(0)
   transactions  Transaction[]  // 1-to-many relation
+  ocrLogs       OcrLog[] // 1-to-many relation
+
 }
 
 model Transaction {
@@ -30,4 +33,19 @@ model Transaction {
   category    String?
   description String?
   createdAt   DateTime @default(now())
+  ocrLogId Int? // Optional reference to OCR log
+  ocrLog OcrLog? @relation(fields: [ocrLogId], references: [id])
+}
+
+model OcrLog {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id])
+  userId String
+  imagePath String
+  extractedText String?
+  parsedData Json? // Store parsed JSON (amount, items, etc)
+  status String @default("pending") // pending, success, failed
+  errorMessage String?
+  createdAt DateTime @default(now())
+  transactions Transaction[] // OCR can create multiple transactions
 }

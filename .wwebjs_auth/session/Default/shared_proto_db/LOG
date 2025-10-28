@@ -1,2 +1,3 @@
-2025/10/27-10:40:35.517 132228 Creating DB /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/shared_proto_db since it was missing.
-2025/10/27-10:40:35.533 132228 Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/shared_proto_db/MANIFEST-000001
+2025/10/28-11:16:28.083 163157 Reusing MANIFEST /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/shared_proto_db/MANIFEST-000001
+2025/10/28-11:16:28.083 163157 Recovering log #3
+2025/10/28-11:16:28.083 163157 Reusing old log /home/muhamad-daffa-azfa-rabbani/WebstormProjects/untitled2/.wwebjs_auth/session/Default/shared_proto_db/000003.log 

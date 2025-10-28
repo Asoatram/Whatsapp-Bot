@@ -5,6 +5,8 @@ import * as dotenv from "dotenv";
 import {handleFinancialMessage} from "./src/ai/handler.js";
 import {handleNaturalMessage} from "./src/ai/langchain.js";
 import handleIncomingMessage from "./src/handlers/messageHandler.js";
+import { scheduleReminders } from "./src/services/reminderService.js";
+
 
 dotenv.config();
 
@@ -22,6 +24,7 @@ client.on("qr", qr => {
 // Once ready
 client.on("ready", () => {
     console.log("✅ WhatsApp bot connected and ready!");
+    scheduleReminders(client);
 });
 
 client.on("message", async message => {
