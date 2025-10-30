@@ -209,6 +209,8 @@ When you first run the bot, a QR code will appear in the terminal. Scan it with 
 3. Tap "Link a Device"
 4. Scan the QR code in your terminal
 
+![Login_QR](picture/ss3.png)
+
 ---
 
 ## ⚙️ Configuration

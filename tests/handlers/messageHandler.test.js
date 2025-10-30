@@ -5,12 +5,14 @@ const { computeReplyForMessageBody } = await import("../../src/handlers/messageH
 describe("messageHandler.computeReplyForMessageBody", () => {
     beforeAll(async () => {
         await connectDB(); // 👈 connect once before all tests
+        await prisma.ocrLog.deleteMany({})
         await prisma.transaction.deleteMany({});
         await prisma.user.deleteMany({});
     });
 
     afterAll(async () => {
         await prisma.transaction.deleteMany({});
+        await prisma.ocrLog.deleteMany({});
         await prisma.user.deleteMany({});
         await prisma.$disconnect();
     });
