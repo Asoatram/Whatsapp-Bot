@@ -6,25 +6,19 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
+## 👥 Tim
 
-## 📋 Table of Contents
+![Tim proyek](picture/ss4.png)
 
-- [Features](#-features)
-- [Demo](#-demo)
-- [Tech Stack](#-tech-stack)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [API Documentation](#-api-documentation)
-- [Testing](#-testing)
-- [Deployment](#-deployment)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [License](#-license)
+- **Muhammad Farrel Akbar**  
+  - NIM: `22/492806/TK/53947`  
 
----
+- **Muhamad Daffa Azfa R.**  
+  - NIM: `22/503970/TK/55101`  
+
+## Links
+- [Finchat WhatsApp Bot (Notion)](https://noon-macaroon-442.notion.site/Finchat-Whatsapp-Bot-29b915b4f086802687e4cc57e6d7be28?source=copy_link)
+- [Demo Video (YouTube)](https://youtu.be/rlND26yOdUw)
 
 ## ✨ Features
 
